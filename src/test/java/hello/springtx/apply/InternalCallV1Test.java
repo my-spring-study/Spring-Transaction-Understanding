@@ -72,7 +72,7 @@ public class InternalCallV1Test {
 		public void external() {
 			log.info("call external");
 			printTxInfo();
-			internal();
+			internal(); // ==this.internal(), 즉 프록시 객체를 통해서 internal()이 호출되는 것이 아니라 실제 callService 객체 인스턴스의 internal()이 호출된다.
 		}
 
 		@Transactional
